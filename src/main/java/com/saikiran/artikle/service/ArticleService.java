@@ -1,7 +1,7 @@
 package com.saikiran.artikle.service;
 
-import com.saikiran.artikle.crud.ArticleRepository;
 import com.saikiran.artikle.model.Article;
+import com.saikiran.artikle.repository.ArticleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -30,24 +30,15 @@ public class ArticleService implements IArticleService {
     }
 
     @Override
-    public boolean createArticle(Article article) {
-        if (getArticle(article.getArticleid()).isPresent()){
-            return false;
-        }
-        articleRepository.save(article);
-        return true;
+    public Article createArticle(Article article) {
+        return articleRepository.save(article);
 
     }
 
-    @Override
-    public boolean updateArticle(Article article,Long id) {
-        if ( getArticle(id).isEmpty()){
-            return false;
-        }
-        articleRepository.save(article);
-        return true;
-    }
 
+    public void deleteArticle(Long id) {
+        articleRepository.deleteById(id);
+    }
 
 }
 

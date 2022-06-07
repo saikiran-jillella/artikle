@@ -2,8 +2,8 @@ package com.saikiran.artikle.service;
 
 import com.saikiran.artikle.model.User;
 
-import java.util.List;
+import java.util.Optional;
 
 public interface IUserHandler {
-    public List<User> getUsers();
+    Optional<User> getUser(Long id);
 }

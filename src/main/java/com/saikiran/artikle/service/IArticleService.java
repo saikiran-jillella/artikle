@@ -10,7 +10,7 @@ public interface IArticleService {
 
     Optional<Article> getArticle(Long id);
 
-    boolean createArticle(Article article);
+    Article createArticle(Article article);
 
-    boolean updateArticle(Article article, Long id);
+    void deleteArticle(Long id);
 }
