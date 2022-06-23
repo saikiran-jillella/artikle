@@ -2,6 +2,7 @@ package com.saikiran.artikle.service;
 
 import com.saikiran.artikle.model.Article;
 import com.saikiran.artikle.repository.ArticleRepository;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -9,15 +10,12 @@ import java.util.List;
 import java.util.Optional;
 
 @Component
+@AllArgsConstructor
 public class ArticleService implements IArticleService {
 
 
     private final ArticleRepository articleRepository;
 
-    @Autowired
-    public ArticleService(ArticleRepository articleRepository) {
-        this.articleRepository = articleRepository;
-    }
 
     @Override
     public List<Article> getArticles() {

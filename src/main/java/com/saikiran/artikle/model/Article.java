@@ -1,12 +1,16 @@
 package com.saikiran.artikle.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.validation.constraints.NotNull;
-import lombok.*;
+
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 import org.hibernate.Hibernate;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 import java.util.Objects;
 
 
@@ -20,6 +24,8 @@ public class Article {
     @GeneratedValue
     private Long articleid;
     @NotNull
+//    @ManyToOne
+//    @JoinColumn(name='User')
     private Long userid;
     @NotNull
     private String title;
